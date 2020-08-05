@@ -6,6 +6,6 @@ description 'Discord Roles in FiveM Chat'
 version '1.0.0'
 
 server_scripts {
-	"sv_chat.lua"
+	"client/sv_chat.lua"
 }
 
