@@ -30,6 +30,15 @@ keyRoles = {
 
 ----------------------- Code ---------------------------------------------------------
 
+function Emojit(text)
+    for i = 1, #emoji do
+      for k = 1, #emoji[i][1] do
+        text = string.gsub(text, emoji[i][1][k], emoji[i][2])
+      end
+    end
+    return text
+end
+
 AddEventHandler('chatMessage', function(Source, Name, Msg)
     args = stringsplit(Msg, " ")
     CancelEvent()
@@ -73,6 +82,12 @@ AddEventHandler('chatMessage', function(Source, Name, Msg)
             end
 
             if text then
+                --emojis in name
+                Msg = Emojit(Msg)
+                
+                --emojis in text chat
+                text = Emojit(text)
+
                 TriggerClientEvent('chatMessage', -1, text .. " | " .. Name, color, Msg)
             else
                 -- Set 
