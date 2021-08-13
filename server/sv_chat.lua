@@ -39,8 +39,8 @@ AddEventHandler("SendFactionChat", function(srcId, destId, Name, Msg)
     end
 
     if identifierDiscord then
-        usersRoles = exports.NetworkSecurity:GetRoles(src)
-        --usersRoles = exports.discord_perms:GetRoles(src)
+        --usersRoles = exports.NetworkSecurity:GetRoles(src)
+        usersRoles = exports.discord_perms:GetRoles(src)
        
         local function setContains(set, key)
             return set[key] ~= nil
